@@ -8,16 +8,16 @@ import (
 	"os"
 	"path"
 
-	"github.com/gophergala/food-plan-organizer/_third_party/github.com/rubenv/sql-migrate"
-	"github.com/gophergala/food-plan-organizer/_third_party/golang.org/x/text/encoding"
-	"github.com/gophergala/food-plan-organizer/_third_party/golang.org/x/text/encoding/charmap"
-	"github.com/gophergala/food-plan-organizer/_third_party/golang.org/x/text/transform"
+	"github.com/rubenv/sql-migrate"
+	"golang.org/x/text/encoding"
+	"golang.org/x/text/encoding/charmap"
+	"golang.org/x/text/transform"
 
 	"flag"
 
-	_ "github.com/gophergala/food-plan-organizer/_third_party/github.com/mattn/go-sqlite3"
 	"github.com/gophergala/food-plan-organizer/cmd/parse/etl"
 	"github.com/gophergala/food-plan-organizer/models"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 //go:generate go-bindata -pkg main -o bindata.go migrations

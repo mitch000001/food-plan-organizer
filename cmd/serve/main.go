@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"time"
 
-	_ "github.com/gophergala/food-plan-organizer/_third_party/github.com/mattn/go-sqlite3"
-	"github.com/gophergala/food-plan-organizer/_third_party/github.com/rubenv/sql-migrate"
 	"github.com/gophergala/food-plan-organizer/cmd/serve/manage"
 	"github.com/gophergala/food-plan-organizer/cmd/serve/search"
 	"github.com/gophergala/food-plan-organizer/cmd/serve/show"
+	_ "github.com/mattn/go-sqlite3"
+	"github.com/rubenv/sql-migrate"
 )
 
 //go:generate go-bindata -pkg main -o bindata.go migrations
