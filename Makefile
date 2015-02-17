@@ -20,8 +20,12 @@ atom:
 
 clean:
 	rm -fr test.app
+	grunt clean
 
-release: clean
+build:
+	grunt build
+
+release: clean build
 	cp -R "/Applications/Atom-Shell.app" test.app
 	chmod +x test.app
 
