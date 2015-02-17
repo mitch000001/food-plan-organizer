@@ -16,4 +16,20 @@ build_server:
 	cd cmd/serve && go build
 
 atom:
-	/Applications/Atom-Shell.app/Contents/MacOS/Atom .
+	/Applications/Atom-Shell.app/Contents/MacOS/Atom ./main.js --develop
+
+clean:
+	rm -fr test.app
+
+release: clean
+	cp -R "/Applications/Atom-Shell.app" test.app
+	chmod +x test.app
+
+	mkdir test.app/Contents/Resources/app/
+
+	cp -R dist/* test.app/Contents/Resources/app/
+	cp ./serve test.app/Contents/Resources/app/
+	cp ./main.js test.app/Contents/Resources/app/
+	cp ./package.json test.app/Contents/Resources/app/
+	cp ./sr27.db test.app/Contents/Resources/app/
+	cp ./user.db test.app/Contents/Resources/app/

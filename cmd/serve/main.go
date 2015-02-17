@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/gophergala/food-plan-organizer/cmd/serve/manage"
-	"github.com/gophergala/food-plan-organizer/cmd/serve/search"
-	"github.com/gophergala/food-plan-organizer/cmd/serve/show"
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/nicolai86/food-plan-organizer/cmd/serve/manage"
+	"github.com/nicolai86/food-plan-organizer/cmd/serve/search"
+	"github.com/nicolai86/food-plan-organizer/cmd/serve/show"
 	"github.com/rubenv/sql-migrate"
 )
 

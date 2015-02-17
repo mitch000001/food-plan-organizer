@@ -14,6 +14,7 @@ function getMonday(d) {
     diff = d.getDate() - day + (day === 0 ? -6 : 1);
   return new Date(d.setDate(diff));
 }
+
 var getWeek = function(weekDiff) {
   var startDate = new Date();
   startDate = startDate.setDate(startDate.getDate() + weekDiff * 7);
@@ -26,7 +27,7 @@ var getWeek = function(weekDiff) {
     dates.push(date);
   }
   return dates;
-}
+};
 
 angular.module('foodPlanOrganizerApp')
 .controller('PlanningCtrl', function($scope) {

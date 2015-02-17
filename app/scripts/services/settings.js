@@ -10,7 +10,11 @@ angular.module('foodPlanOrganizerApp')
   return {
     params: queryParams,
     host: function() {
-      return 'http://localhost' + queryParams.backend;
+      var backend = queryParams.backend;
+      if (backend === undefined) {
+        backend = ':8080';
+      }
+      return 'http://localhost' + backend;
     }
   };
 });

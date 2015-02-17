@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/gophergala/food-plan-organizer/models"
+	"github.com/nicolai86/food-plan-organizer/models"
 )
 
 type showNutrientServer struct {

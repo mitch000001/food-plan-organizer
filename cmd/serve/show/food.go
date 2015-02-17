@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/gophergala/food-plan-organizer/models"
+	"github.com/nicolai86/food-plan-organizer/models"
 )
 
 type showServer struct {

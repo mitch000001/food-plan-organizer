@@ -11,7 +11,7 @@
 var ingredientHandling = function ingredientHandling($scope, Food) {
   $scope.selectedIngredient = null;
   $scope.recipe.ingredients = [];
-  $scope.$watch('selectedIngredient', function(n, o) {
+  $scope.$watch('selectedIngredient', function(n) {
     if (n !== null) {
       $scope.currentIngredient = n.originalObject;
       $scope.$broadcast('add.ingredient', $scope.currentIngredient);
@@ -24,6 +24,7 @@ var ingredientHandling = function ingredientHandling($scope, Food) {
     Food.get({
       id: ingredient.id
     }, function(foodData) {
+      /* jshint camelcase: false */
       $scope.recipe.ingredients.push({
         name: ingredient.name,
         food_id: ingredient.id,
@@ -66,9 +67,10 @@ var totalNutrients = function(recipe, nutrients, nutrientId) {
     }
 
     for (var j = 0; j < ingredient.nutrients.length; j++) {
-      var nutrient = ingredient.nutrients[j];
-      if (nutrient.id === nutrientId) {
-        total = total + (nutrient.nutrient_value * multipler);
+      var nut = ingredient.nutrients[j];
+      if (nut.id === nutrientId) {
+        /* jshint camelcase: false */
+        total = total + (nut.nutrient_value * multipler);
       }
     }
   }
