@@ -7,3 +7,6 @@ data/*.txt
 data/*.pdf
 *.db
 *.bak
+cmd/parse/parse
+cmd/serve/serve
+test.app/
