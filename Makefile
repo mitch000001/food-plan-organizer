@@ -16,7 +16,7 @@ build_server:
 	cd cmd/serve && go build
 
 atom:
-	/Applications/Atom-Shell.app/Contents/MacOS/Atom ./main.js --develop
+	/Applications/Electron.app/Contents/MacOS/Electron ./main.js --develop
 
 clean:
 	rm -fr test.app
@@ -26,13 +26,13 @@ build:
 	grunt build
 
 release: clean build
-	cp -R "/Applications/Atom-Shell.app" test.app
+	cp -R "/Applications/Electron.app" test.app
 	chmod +x test.app
 
 	mkdir test.app/Contents/Resources/app/
 
 	cp -R dist/* test.app/Contents/Resources/app/
-	cp ./serve test.app/Contents/Resources/app/
+	cp ./cmd/serve/serve test.app/Contents/Resources/app/
 	cp ./main.js test.app/Contents/Resources/app/
 	cp ./package.json test.app/Contents/Resources/app/
 	cp ./sr27.db test.app/Contents/Resources/app/
